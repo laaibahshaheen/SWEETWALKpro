@@ -1,0 +1,673 @@
+Build a complete, polished, responsive healthcare/medtech web application called "SweetWalk".
+
+SweetWalk is a smart insole platform designed for early detection and monitoring of diabetic foot complications using plantar pressure, foot temperature, and gait/motion data.
+
+IMPORTANT:
+This is a FRONTEND + functional prototype website. Make it look like a real commercial medtech product, not a generic AI dashboard.
+
+==================================================
+BRAND
+==================================================
+
+Website name:
+SweetWalk
+
+Tagline:
+"Walk Smarter. Detect Earlier."
+
+Brand personality:
+- Premium
+- Clinical
+- Modern
+- Trustworthy
+- Futuristic
+- Minimal
+- Healthcare technology
+- Suitable for patients, caregivers, and clinicians
+
+Do NOT make it look like a generic hospital website.
+
+==================================================
+COLOR SYSTEM
+==================================================
+
+Use ONLY these primary brand colors:
+
+Deep Burgundy:
+#880808
+
+Dusty Rose / Mauve:
+#B09B9B
+
+Neutral Gray:
+#808080
+
+Very Dark Burgundy:
+#1A0000
+
+Use:
+#1A0000 → primary dark backgrounds, navigation, hero sections
+#880808 → primary buttons, important highlights, active states
+#B09B9B → secondary UI elements, cards, subtle backgrounds
+#808080 → secondary text, borders, metadata
+
+Use white/off-white where necessary for readability.
+
+Do NOT use the usual blue/purple healthcare palette.
+
+The overall visual identity should feel burgundy + charcoal + muted rose.
+
+==================================================
+DESIGN LANGUAGE
+==================================================
+
+Create a premium modern UI inspired by:
+- Apple Health
+- Oura
+- WHOOP
+- Linear
+- modern medtech startups
+- premium SaaS dashboards
+
+Visual style:
+- Dark luxury aesthetic
+- Soft glassmorphism
+- Subtle neumorphism
+- Large rounded cards
+- 20–28px border radius
+- Thin borders
+- Soft shadows
+- Subtle gradients using only the SweetWalk palette
+- Smooth hover animations
+- Micro-interactions
+- Clean typography
+- Large whitespace
+- Excellent visual hierarchy
+
+Avoid:
+- excessive gradients
+- cartoon graphics
+- childish medical illustrations
+- generic hospital imagery
+- excessive icons
+- blue/purple colors
+- overly complicated layouts
+
+==================================================
+TECH STACK
+==================================================
+
+Use:
+- React
+- TypeScript
+- Tailwind CSS
+- Lucide React icons
+- Recharts for graphs
+- React Router
+
+Build reusable components.
+
+Organize the project cleanly into:
+components/
+pages/
+layouts/
+data/
+services/
+hooks/
+utils/
+
+==================================================
+WEBSITE STRUCTURE
+==================================================
+
+Create the following pages:
+
+1. Landing Page
+2. Product / How It Works
+3. Patient Dashboard
+4. Live Monitoring
+5. Foot Pressure Heatmap
+6. Risk Analysis
+7. Analytics / History
+8. Alerts
+9. Device Management
+10. About SweetWalk
+
+==================================================
+1. LANDING PAGE
+==================================================
+
+Create a premium hero section.
+
+Headline:
+
+"Walk Smarter.
+Detect Earlier."
+
+Subheading:
+
+"SweetWalk transforms continuous foot pressure, temperature and gait data into meaningful insights for early diabetic foot risk detection."
+
+Primary CTA:
+"Explore SweetWalk"
+
+Secondary CTA:
+"View Dashboard"
+
+Hero visual:
+Create a premium representation of a smart insole / foot monitoring system.
+
+Show subtle floating data cards around the product:
+
+"Foot Health Score 92%"
+"Temperature 36.8°C"
+"Pressure Normal"
+"BLE Connected"
+
+Add subtle animated particles/grid in the background.
+
+Below hero:
+
+WHY SWEETWALK
+
+Three cards:
+
+Continuous Monitoring
+"Monitor pressure and temperature throughout daily activity."
+
+Early Risk Detection
+"Identify abnormal patterns before complications become severe."
+
+Actionable Insights
+"Convert raw sensor readings into simple, understandable health insights."
+
+==================================================
+2. HOW IT WORKS
+==================================================
+
+Create a 4-step visual process:
+
+SENSE
+FSR pressure sensors + temperature + motion
+
+CONNECT
+ESP32 + Bluetooth Low Energy
+
+ANALYZE
+Backend processes and analyzes the readings
+
+ACT
+Risk alerts and actionable insights
+
+Use a clean horizontal flow on desktop and vertical flow on mobile.
+
+==================================================
+3. PATIENT DASHBOARD
+==================================================
+
+Create a realistic dashboard.
+
+Top navigation:
+SweetWalk logo
+Dashboard
+Monitoring
+Analytics
+Alerts
+Device
+Profile
+
+Main dashboard:
+
+Greeting:
+"Good morning, Laaibah"
+
+Large card:
+
+FOOT HEALTH SCORE
+92 / 100
+
+Status:
+LOW RISK
+
+Use a circular progress visualization.
+
+Sensor cards:
+
+Temperature
+36.8°C
+Normal
+
+Heel Pressure
+42%
+Normal
+
+Forefoot Pressure
+38%
+Normal
+
+Steps
+4,821
+
+Walking Duration
+47 min
+
+Device Battery
+92%
+
+Add a "Recent Activity" section.
+
+==================================================
+4. LIVE MONITORING
+==================================================
+
+Create a real-time monitoring dashboard.
+
+Title:
+"Live Foot Monitoring"
+
+Show:
+
+BLE Status:
+CONNECTED
+
+Battery:
+92%
+
+Live sensor cards:
+
+HEEL
+42%
+
+1ST METATARSAL
+51%
+
+5TH METATARSAL
+27%
+
+BIG TOE
+18%
+
+Create animated-looking real-time line graphs using Recharts.
+
+Graphs:
+- Plantar Pressure
+- Temperature
+- Walking Activity
+
+Add:
+"Last updated: Just now"
+
+Use simulated data that changes periodically so the dashboard feels alive.
+
+==================================================
+5. FOOT PRESSURE HEATMAP
+==================================================
+
+This should be one of the strongest visual sections.
+
+Create a stylized top-view human foot silhouette.
+
+Display four sensor zones:
+
+Heel
+1st Metatarsal
+5th Metatarsal
+Big Toe
+
+Use pressure visualization:
+
+Low → muted rose
+Medium → burgundy
+High → deep burgundy/red
+
+Add a legend:
+
+LOW
+MEDIUM
+HIGH
+
+Clicking a sensor should display a detail card:
+
+"HEEL"
+
+Pressure:
+68%
+
+Status:
+Elevated
+
+Duration:
+12 min
+
+Do NOT claim this is a clinically validated pressure map. Present it as a prototype visualization.
+
+==================================================
+6. RISK ANALYSIS
+==================================================
+
+Create a premium risk-analysis dashboard.
+
+Large circular score:
+
+RISK SCORE
+24 / 100
+
+Status:
+LOW RISK
+
+Risk factor cards:
+
+Pressure Load
+Low
+
+Temperature
+Normal
+
+Walking Pattern
+Normal
+
+Prolonged Loading
+Low
+
+Add a "Risk Trend" chart.
+
+Add recommendation:
+
+"Current readings do not indicate elevated risk. Continue regular monitoring."
+
+Include a small disclaimer:
+
+"SweetWalk is a monitoring and decision-support prototype and does not replace clinical diagnosis."
+
+==================================================
+7. ANALYTICS
+==================================================
+
+Create a detailed historical analytics page.
+
+Tabs:
+Today
+7 Days
+30 Days
+
+Graphs:
+
+Pressure Trend
+Temperature Trend
+Risk Trend
+Daily Steps
+
+Add summary cards:
+
+Average Temperature
+Peak Pressure
+Total Steps
+High-Risk Events
+
+Create realistic mock data.
+
+==================================================
+8. ALERTS
+==================================================
+
+Create a modern notification center.
+
+Example alerts:
+
+HIGH PRESSURE DETECTED
+Heel pressure remained elevated for 8 minutes.
+
+TEMPERATURE CHANGE
+Localized temperature increased compared with baseline.
+
+PROLONGED LOADING
+Abnormal loading duration detected.
+
+Each alert should have:
+- timestamp
+- severity
+- affected region
+- short explanation
+- recommended action
+
+Use SweetWalk burgundy colors instead of bright generic red.
+
+==================================================
+9. DEVICE MANAGEMENT
+==================================================
+
+Create:
+
+SweetWalk Insole
+
+CONNECTED
+
+Battery:
+92%
+
+Bluetooth:
+Connected
+
+Firmware:
+v1.0.0
+
+Last synchronized:
+Just now
+
+Buttons:
+
+Reconnect Device
+Calibrate Sensors
+Sync Data
+
+Create a calibration modal:
+
+"Sensor Calibration"
+
+Step 1:
+Remove all pressure from the insole.
+
+Step 2:
+Keep the insole unloaded for 5 seconds.
+
+Step 3:
+Apply normal standing pressure.
+
+Step 4:
+Calibration complete.
+
+==================================================
+10. ABOUT SWEETWALK
+==================================================
+
+Explain:
+
+"The SweetWalk platform combines wearable sensing, wireless communication, backend analytics and intuitive visualization to support continuous diabetic foot monitoring."
+
+Technology section:
+
+ESP32
+FSR Pressure Sensors
+DS18B20
+MPU6050
+Bluetooth Low Energy
+Python
+FastAPI
+SQL
+REST API
+Figma / UI UX
+
+Architecture visualization:
+
+Sensors
+↓
+ESP32
+↓
+BLE
+↓
+Mobile / Web Interface
+↓
+FastAPI Backend
+↓
+Risk Analysis
+↓
+Dashboard
+
+==================================================
+INTERACTIVITY
+==================================================
+
+Make the website functional.
+
+Implement:
+
+- Working navigation
+- Dashboard routing
+- Interactive charts
+- Interactive heatmap sensor points
+- Alert filtering
+- Time-range switching
+- Device connection simulation
+- Calibration modal
+- Dark/light appearance if appropriate
+- Responsive mobile navigation
+- Hover states
+- Button animations
+- Loading states
+- Toast notifications
+
+Use mock data for the prototype.
+
+IMPORTANT:
+Structure the data layer so the mock data can later be replaced by real FastAPI REST API calls.
+
+Create a services/api.ts file with placeholder API functions such as:
+
+getDashboardData()
+getSensorData()
+getRiskAnalysis()
+getAlerts()
+getHistory()
+calibrateDevice()
+
+Do NOT hardcode everything directly inside UI components.
+
+==================================================
+RESPONSIVE DESIGN
+==================================================
+
+Desktop:
+1440px optimized dashboard
+
+Tablet:
+1024px
+
+Mobile:
+390px
+
+The entire application must remain usable on mobile.
+
+==================================================
+NAVIGATION
+==================================================
+
+Desktop sidebar:
+
+SweetWalk logo
+
+Dashboard
+Live Monitoring
+Heatmap
+Risk Analysis
+Analytics
+Alerts
+Device
+
+Bottom:
+
+Profile
+Settings
+
+Mobile:
+Use a clean bottom navigation.
+
+==================================================
+LOGO
+==================================================
+
+Create a simple SweetWalk wordmark.
+
+Logo concept:
+A minimalist footstep combined with a subtle heart/medical signal.
+
+Do not use a generic hospital cross.
+
+==================================================
+UX DETAILS
+==================================================
+
+Add subtle animations:
+
+- Cards fade/slide in
+- Numbers count up
+- Circular score animates
+- Charts animate
+- Sensor status pulses
+- Hover elevation
+- Smooth page transitions
+
+Keep animations subtle and professional.
+
+==================================================
+ACCESSIBILITY
+==================================================
+
+Ensure:
+
+- high contrast
+- readable typography
+- clear status labels
+- icons accompanied by text where necessary
+- keyboard-friendly controls
+- responsive layout
+
+==================================================
+IMPORTANT MEDICAL ACCURACY
+==================================================
+
+Do NOT claim that the prototype diagnoses diabetic foot ulcers.
+
+Use terminology such as:
+
+"risk monitoring"
+"early warning"
+"risk assessment"
+"decision support"
+"monitoring"
+
+Avoid:
+
+"diagnoses ulcers"
+"guarantees prevention"
+"clinically proven"
+
+Unless explicitly supported by data.
+
+==================================================
+FINAL QUALITY
+==================================================
+
+The final website should look like a premium startup product that could be shown to SIH judges.
+
+Prioritize:
+1. Visual polish
+2. Clear healthcare story
+3. Functional dashboard
+4. Interactive data visualization
+5. Strong responsive design
+6. Clean reusable React components
+7. Easy future FastAPI integration
+
+Do not create a basic template.
+
+Build the complete SweetWalk prototype with realistic mock sensor data and a polished medtech dashboard experience.

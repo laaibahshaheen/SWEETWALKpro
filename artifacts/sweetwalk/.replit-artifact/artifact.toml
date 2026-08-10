@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "SweetWalk"
+description = "A premium healthcare medtech prototype for monitoring foot pressure, temperature, and gait signals to surface early diabetic foot risk insights for patients and care teams."
+version = "1.0.0"
+id = "artifacts/sweetwalk"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 23995
+
+[services.development]
+run = "pnpm --filter @workspace/sweetwalk run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/sweetwalk", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/sweetwalk/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "23995"
+BASE_PATH = "/"

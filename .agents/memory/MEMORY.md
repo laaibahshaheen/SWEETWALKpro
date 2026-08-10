@@ -1,0 +1,1 @@
+- [Icon rendering](lucide-icon-rendering.md) — render selected Lucide components through JSX wrappers; invoking icon components as plain functions fails at runtime.
