@@ -37,55 +37,35 @@ SweetWalk integrates:
 The system converts raw sensor readings into understandable information such as pressure distribution, temperature trends, risk levels, and alerts.
 
 ---
-
 ## 🏗️ System Architecture
 
-
-┌──────────────────────────────────────────────┐
-│              SMART INSOLE                    │
-│                                              │
-│  4× FSR     DS18B20       MPU6050           │
-│ Pressure    Temperature   Motion/Gait        │
-└──────────────────────┬───────────────────────┘
-                       │
-                       ▼
-┌──────────────────────────────────────────────┐
-│              ESP32 WROOM-32                  │
-│                                              │
-│  Acquisition • Filtering • Calibration       │
-│  Data Packaging • Device Management          │
-└──────────────────────┬───────────────────────┘
-                       │
-                       │ BLE
-                       ▼
-┌──────────────────────────────────────────────┐
-│           MOBILE / GATEWAY LAYER             │
-│                                              │
-│       Receives & forwards sensor data         │
-└──────────────────────┬───────────────────────┘
-                       │
-                    REST API
-                       │
-                       ▼
-┌──────────────────────────────────────────────┐
-│           FASTAPI BACKEND                    │
-│                                              │
-│ Validation • Processing • Storage • Alerts   │
-└──────────────────────┬───────────────────────┘
-                       │
-                       ▼
-┌──────────────────────────────────────────────┐
-│          RISK & ANALYTICS ENGINE             │
-│                                              │
-│ Pressure + Temperature + Gait + History      │
-│                    ↓                         │
-│         Abnormal Pattern Detection           │
-└──────────────────────┬───────────────────────┘
-                       │
-                       ▼
-┌──────────────────────────────────────────────┐
-│             SWEETWALK UI                     │
-│                                              │
-│  🦶 Heatmap   📊 Analytics   ⚠ Alerts        │
-│  🌡 Temp      📈 Trends      ❤️ Risk Score   │
-└──────────────────────────────────────────────┘
+  FSR Pressure Sensors
+                 │
+        DS18B20 Temperature
+                 │
+             MPU6050
+                 │
+                 ▼
+              ESP32
+                 │
+            BLE Communication
+                 │
+                 ▼
+          Mobile / Web App
+                 │
+             REST API
+                 │
+                 ▼
+        Python + FastAPI
+                 │
+        ┌────────┴────────┐
+        │                 │
+   Risk Analysis       Database
+        │                 │
+        └────────┬────────┘
+                 ▼
+        SweetWalk Dashboard
+                 │
+       ┌─────────┼─────────┐
+       ▼         ▼         ▼
+    Heatmap    Alerts    Analytics
