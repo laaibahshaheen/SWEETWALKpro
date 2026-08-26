@@ -40,32 +40,46 @@ The system converts raw sensor readings into understandable information such as 
 
 ## 🏗️ System Architecture
 
-```text
-        FSR Pressure Sensors
-                 │
-        DS18B20 Temperature
-                 │
-             MPU6050
-                 │
-                 ▼
-              ESP32
-                 │
-            BLE Communication
-                 │
-                 ▼
-          Mobile / Web App
-                 │
-             REST API
-                 │
-                 ▼
-        Python + FastAPI
-                 │
-        ┌────────┴────────┐
-        │                 │
-   Risk Analysis       Database
-        │                 │
-        └────────┬────────┘
-                 ▼
+┌─────────────────────────────┐
+│        SMART INSOLE         │
+│                             │
+│  4× FSR Pressure Sensors    │
+│  DS18B20 Temperature        │
+│  MPU6050 Motion Sensor      │
+└──────────────┬──────────────┘
+               │
+               ▼
+       ┌───────────────┐
+       │ ESP32 WROOM-32│
+       │ Data Acquisition│
+       └───────┬───────┘
+               │
+              BLE
+               │
+               ▼
+       ┌───────────────┐
+       │ Application   │
+       └───────┬───────┘
+               │ REST API
+               ▼
+       ┌───────────────┐
+       │ FastAPI       │
+       │ Backend       │
+       └───────┬───────┘
+               │
+       ┌───────┴────────┐
+       ▼                ▼
+   Database        Risk Analysis
+                         │
+                         ▼
+                ┌────────────────┐
+                │ SweetWalk UI   │
+                │                │
+                │ • Heatmap      │
+                │ • Risk Score   │
+                │ • Alerts       │
+                │ • Analytics    │
+                └────────────────┘
         SweetWalk Dashboard
                  │
        ┌─────────┼─────────┐
