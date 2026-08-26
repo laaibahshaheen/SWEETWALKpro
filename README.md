@@ -37,9 +37,11 @@ SweetWalk integrates:
 The system converts raw sensor readings into understandable information such as pressure distribution, temperature trends, risk levels, and alerts.
 
 ---
+
 ## 🏗️ System Architecture
 
-  FSR Pressure Sensors
+```text
+        FSR Pressure Sensors
                  │
         DS18B20 Temperature
                  │
