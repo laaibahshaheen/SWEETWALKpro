@@ -40,48 +40,52 @@ The system converts raw sensor readings into understandable information such as 
 
 ## 🏗️ System Architecture
 
-┌─────────────────────────────┐
-│        SMART INSOLE         │
-│                             │
-│  4× FSR Pressure Sensors    │
-│  DS18B20 Temperature        │
-│  MPU6050 Motion Sensor      │
-└──────────────┬──────────────┘
-               │
-               ▼
-       ┌───────────────┐
-       │ ESP32 WROOM-32│
-       │ Data Acquisition│
-       └───────┬───────┘
-               │
-              BLE
-               │
-               ▼
-       ┌───────────────┐
-       │ Application   │
-       └───────┬───────┘
-               │ REST API
-               ▼
-       ┌───────────────┐
-       │ FastAPI       │
-       │ Backend       │
-       └───────┬───────┘
-               │
-       ┌───────┴────────┐
-       ▼                ▼
-   Database        Risk Analysis
-                         │
-                         ▼
-                ┌────────────────┐
-                │ SweetWalk UI   │
-                │                │
-                │ • Heatmap      │
-                │ • Risk Score   │
-                │ • Alerts       │
-                │ • Analytics    │
-                └────────────────┘
-        SweetWalk Dashboard
-                 │
-       ┌─────────┼─────────┐
-       ▼         ▼         ▼
-    Heatmap    Alerts    Analytics
+
+┌──────────────────────────────────────────────┐
+│              SMART INSOLE                    │
+│                                              │
+│  4× FSR     DS18B20       MPU6050           │
+│ Pressure    Temperature   Motion/Gait        │
+└──────────────────────┬───────────────────────┘
+                       │
+                       ▼
+┌──────────────────────────────────────────────┐
+│              ESP32 WROOM-32                  │
+│                                              │
+│  Acquisition • Filtering • Calibration       │
+│  Data Packaging • Device Management          │
+└──────────────────────┬───────────────────────┘
+                       │
+                       │ BLE
+                       ▼
+┌──────────────────────────────────────────────┐
+│           MOBILE / GATEWAY LAYER             │
+│                                              │
+│       Receives & forwards sensor data         │
+└──────────────────────┬───────────────────────┘
+                       │
+                    REST API
+                       │
+                       ▼
+┌──────────────────────────────────────────────┐
+│           FASTAPI BACKEND                    │
+│                                              │
+│ Validation • Processing • Storage • Alerts   │
+└──────────────────────┬───────────────────────┘
+                       │
+                       ▼
+┌──────────────────────────────────────────────┐
+│          RISK & ANALYTICS ENGINE             │
+│                                              │
+│ Pressure + Temperature + Gait + History      │
+│                    ↓                         │
+│         Abnormal Pattern Detection           │
+└──────────────────────┬───────────────────────┘
+                       │
+                       ▼
+┌──────────────────────────────────────────────┐
+│             SWEETWALK UI                     │
+│                                              │
+│  🦶 Heatmap   📊 Analytics   ⚠ Alerts        │
+│  🌡 Temp      📈 Trends      ❤️ Risk Score   │
+└──────────────────────────────────────────────┘
